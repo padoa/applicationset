@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: check
-      uses: grandcolline/golang-github-actions@v1.1.0
+      uses: grandcolline/golang-github-actions@d1fab268ef4df10e7e11f248a179fedf9e94e054 # v1.1.0
       with:
         run: fmt
         comment: false
