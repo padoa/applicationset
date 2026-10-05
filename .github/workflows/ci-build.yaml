@@ -192,7 +192,9 @@ jobs:
           INSTALL_K3S_VERSION: ${{ matrix.k3s-version }}+k3s1
         run: |
           set -x
-          curl -sfL https://get.k3s.io | sh -
+          curl -sfL -o /tmp/k3s-install.sh https://raw.githubusercontent.com/k3s-io/k3s/2977c525a2e7a487886107ce4df43630ae9b03b2/install.sh
+          echo "e5cc3b3d9dfc1662c2d9be6da5abc9a4cd317d6abc3a5ffc02e3dd3248207fee  /tmp/k3s-install.sh" | sha256sum -c -
+          sh /tmp/k3s-install.sh
           sudo chmod -R a+rw /etc/rancher/k3s
           sudo mkdir -p $HOME/.kube && sudo chown -R runner $HOME/.kube
           sudo k3s kubectl config view --raw > $HOME/.kube/config
