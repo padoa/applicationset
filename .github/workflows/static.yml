@@ -13,7 +13,7 @@ permissions:
 jobs:
   gofmt:
     name: Ensure that code is gofmt-ed
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@28c7f3d2b5162b5ddd3dfd9a45aa55eaf396478b # v2.3.1
     - name: check
